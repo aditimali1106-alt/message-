@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cute Surprise</title>
+
+<style>
+body {
+    margin: 0;
+    background: rgb(222, 201, 205);
+    overflow: hidden;
+    text-align: center;
+    font-family: Arial;
+}
+
+
+#btn {
+    margin-top: 200px;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    background: red;
+    color: white;
+    cursor: pointer;
+}
+
+
+#msg {
+    display: none;
+    font-size: 30px;
+    color: black;
+    margin-top: 150px;
+}
+
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    bottom: 0;
+    animation: float 5s linear infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -10px;
+    left: 0;
+}
+
+.heart:after {
+    left: -10px;
+    top: 0;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(-600px) rotate(45deg); opacity: 0; }
+}
+</style>
+
+</head>
+
+<body>
+
+<button id="btn" onclick="start()">Click Me 💖</button>
+
+<div id="msg">“ Being with you has been one of the best parts of my life. I’m really grateful to have you, and I love all the little moments we share. I hope we keep making many more beautiful memories together . You’ve become such an important part of my life—my comfort, my happiness, and the person I love the most. Being with you feels easy and real, like I can truly be myself without any fear. I love the way you understand me even when I don’t say much, the way you make me laugh when I need it the most. You’ve shown me what it means to care deeply and genuinely, and I’m so grateful for that. No matter where life takes us, I just want you to know that you hold a very special place in my heart that no one else ever could.
+I Love You Sm Chikuu babyy 💕”
+<br>
+Happy 10 months ❤️</div>
+
+<script>
+function start() {
+    document.getElementById("msg").style.display = "block";
+    document.getElementById("btn").style.display = "none";
+
+    setInterval(function() {
+        var h = document.createElement("div");
+        h.className = "heart";
+        h.style.left = Math.random() * window.innerWidth + "px";
+        document.body.appendChild(h);
+
+        setTimeout(function() {
+            h.remove();
+        }, 5000);
+    }, 300);
+}
+</script>
+
+</body>
+</html>
